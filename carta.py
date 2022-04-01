@@ -1,8 +1,9 @@
 class Carta:
-    def __init__(self, mazo, card_ID):
-        carta = mazo.get(card_ID)
-        self.ID = card_ID
+    def __init__(self, mazo, card_id):
+        carta = mazo.get(card_id)
+        self.id = card_id
         self.nombre = carta[0]
+        self.tipo = carta[1]
         self.ataque = carta[2]
         self.defensa = carta[3]
         self.sacrificio = carta[4]
