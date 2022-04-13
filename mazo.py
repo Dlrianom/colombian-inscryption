@@ -9,7 +9,7 @@ class Mazo:
         self.cartas[id] = carta
         mazo_origen.pop(id)
 
-    def printCarta(self, id): #para arreglar = imprimir los objetos
+    def printCarta(self, id):
         print("==========================")#26 =
         print('|        [ {} ]        |'.format(self.cartas.get(id).id))
         print('| {:23}{}'.format(self.cartas.get(id).nombre, "|"))
