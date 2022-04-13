@@ -8,9 +8,9 @@ class Mazo:
 
     #El método recibircarta retira las cartas que ha elegido cada jugador de las cartas disponibles 
     def recibirCarta (self, mazo_origen, id):
-        carta = mazo_origen.get(id)
+        carta = mazo_origen.cartas.get(id)
         self.cartas[id] = carta
-        mazo_origen.pop(id)
+        mazo_origen.cartas.pop(id)
 
     #El método printCarta imprime toda la información necesaria para la carta seleccionada en la terminal
     def printCarta(self, id): #para arreglar = imprimir los objetos

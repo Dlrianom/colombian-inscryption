@@ -10,3 +10,4 @@ class Carta:
         self.defensa = carta[3]
         self.sacrificio = carta[4]
         self.convocar = carta[5] # o quien haga sus veces
+        self.cant = 1
