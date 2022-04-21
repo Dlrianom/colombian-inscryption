@@ -15,3 +15,7 @@ class Player:
 
     def getName(self):
         return self.name
+
+    def convocar (self):
+        pass
+    
