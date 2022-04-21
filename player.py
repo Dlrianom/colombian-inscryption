@@ -15,3 +15,6 @@ class Player:
 
     def getName(self):
         return self.name
+
+    def ataque (self):
+        pass
