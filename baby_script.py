@@ -14,16 +14,26 @@ cartas_disponibles.diccToCartas(cartas_DISP)
 #Llamado del método printCarta de la clase Mazo el cual imprime toda la información necesaria para la carta seleccionada
 #cartas_disponibles.printCarta("A015")
 
-
-tablero = Tablero()
-tablero.player1.setName()
-tablero.player2.setName()
-
-tablero.repartirCarta(cartas_disponibles)
-
-tablero.player1.mazo.printCartas()
-print("---------------------------------------------------------")
-tablero.player2.mazo.printCartas()
+# Funcion inicio de turno
+def turnInit():
+    end_turn = False
+    while end_turn == False:
+        print("Por favor seleccione acción:")
+        print("""
+        1. Convocar
+        2. Sacrificar
+        3. Atacar!
+        """)
+        command = input("-->")
+        print("")
+        if command == "1":
+            print("Convocando...\n")
+        if command == "2":
+            print("Sacrificando...\n")
+        if command == "3":
+            print("Atacando...")
+            print("Fin del turno.\n")
+            end_turn = True
 
 #basicas = cartas_disponibles.getCardsType("BASICA")
 #print (getCardType(cartas_DISP, "MEDIA"))
@@ -43,9 +53,28 @@ tablero.player2.mazo.printCartas()
 #         print("carta 1-nombre: {}, ID: {}".format(mazo_jugador_1.cartas[i].nombre, mazo_jugador_1.cartas[i].ID))
 #     #print(carta.nombre, "\n", carta.ataque, "\n", carta.defensa, "\n", carta.ID)
 
-# def main():
-#     print(cartas_disponibles.get("A105").id)
+def main():
+    print("Bienvenido a mi jueguito uwu")
 
-# if __name__ == "__main__":
-#     main()
+    # Iniciar Tablero
+    tablero = Tablero()
+
+    # Se configuran jugadores
+    print("Jugador 1")
+    tablero.player1.setName()
+    print("Jugador 2")
+    tablero.player2.setName()
+
+    # Se reparten cartas
+    tablero.repartirCarta(cartas_disponibles)
+    tablero.player1.mazo.printCartas()
+    print("---------------------------------------------------------\n")
+    tablero.player2.mazo.printCartas()
+
+    # Jugador empieza turno
+    print("Jugador 1 empieza... \n")
+    turnInit()
+
+if __name__ == "__main__":
+    main()
 
